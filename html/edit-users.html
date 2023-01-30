@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../css/styles.css" rel="stylesheet">
+    <script src="../js/communication-application.js"></script>
+</head>
+
+<body class="body" id="body">
+    <script>checkLogin()</script>
+    <script>addNav("users-list")</script>
+    <!-- form for editing user details with table for formatting and spacing -->
+    <form id="edit-form" class="edit-form" method="get" action="./users-list.html" onsubmit="return editUser()">
+        <table class="form-table" id="form-table" cellpadding="15">
+            <tr>
+                <td></td>
+                <td>
+                    <h3 class="heading"><b>Edit User Information</b>
+                        <p>
+                    </h3>
+                </td>
+            </tr>
+            <!-- email id and name can be entered in text fields with save button for submission-->
+            <script>   getEditTable()</script>
+    </form>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/users-list.css">
+    <script src="../js/communication-application.js" type="text/javascript"></script>
+</head>
+
+<body class="body" id="body">
+    <script>checkLogin()</script>
+    <!-- nav bar with 1 row and 4 columns each column is 1 navigation button -->
+    <script>addNav("users-list")</script>
+    <!-- user list table with name email id and edit/delete options -->
+    <h1><b>Users</b></h1>
+    <table id="user-table" class="user-table" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>User Email ID</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="user-table-body">
+            <script>generateUsersTable()</script>
+            <tr>
+                <td>&nbsp</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="modal" id="delete">
+        <!-- heading part of modal box with cancel button -->
+        <div class="heading-box">
+            Confirm User Deletion
+            <button class="transparent-button-cancel" onclick="hideModal('delete')">
+                <img class="cancel-image" src="../cancel.PNG" alt="">
+            </button>
+        </div>
+        <!-- options part of modal box with ok and cancel button  -->
+        <div class="container-div">
+            <div class="container">
+                </br>
+                </br>
+                <div class="description-div">
+                    <img class="question-image" src="../questionCapture.PNG" alt="">
+                    Are you Sure?
+                </div>
+            </div></br><br>
+            <div class="container">
+                <button class="button-white-small" id="ok-button-users" class="ok-button">ok</button>
+                <button class="button-white-small" onclick="hideModal('delete')">Cancel</button>
+            </div></br>
+        </div>
+    </div>
+</body>
+
+</html>

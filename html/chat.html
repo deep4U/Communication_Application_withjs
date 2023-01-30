@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/communication-application.js" type="text/javascript"></script>
+</head>
+
+<body class="body" id="body">
+    <script>checkLogin()</script>
+    <!-- nav bar table -->
+    <script>addNav("chat")</script>
+    </br>
+    <!-- Group chat heading with cancel button  -->
+    <div class="heading-div">Group Chat
+        <span class="right-float">
+            <button class="transparent-button" onclick="goWelcome()">
+                <img class="cancel-image" src="../cancel.PNG" alt="">
+            </button>
+        </span>
+        </button>
+    </div>
+    <!-- This is the chat window with past messages -->
+    <div class="chat-div" id="chat-div">
+        <script>getChatData()</script>
+    </div>
+    <!-- this is options window with user name , text box for entering new message and send and refresh buttons-->
+    <div class="options-div"> <b>
+            <script>getUserName()</script>
+        </b> <input class="input" type="text" name="message" id="message" value="I am good" id="">
+        <button class="button-white" onclick="setGroupChat()">Send</button>
+        <button class="button-white" onclick="location.reload()">Refresh</button>
+    </div>
+</body>
+
+</html>

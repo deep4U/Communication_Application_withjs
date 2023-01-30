@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/communication-application.js"></script>
+</head>
+
+<body class="body" id="body">
+    </br>
+    </br>
+    <!-- login form with emailid and password text boxes and login button-->
+    <table class="form-table" cellpadding="10px" cellspacing="0">
+        <tr>
+            <td>
+            </td>
+            <td>
+                <h1 class="heading"><b>Login</b></h1>
+            </td>
+        </tr>
+        <form class="loginform" action="./login-success.html" onsubmit="return loginForm()" method="GET">
+            <tr>
+                <td class="text-col"> <b>Email</b> </td>
+                <td><input type="text" name="Email" id="email" value="anne.hunter@mail.com" class="text-box"></td>
+            </tr>
+            <tr>
+                <td class="text-col"><b>Password</b></td>
+                <td><input type="password" name="Password" id="password" value="*****" class="text-box"></td>
+            </tr>
+            <tr>
+                <td class="text-col"></td>
+                <td class="submit-col"><input class="submit-button" type="submit" value="Login"></td>
+            </tr>
+        </form>
+    </table>
+</body>
+
+</html>

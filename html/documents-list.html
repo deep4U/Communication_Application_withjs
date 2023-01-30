@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/documents-list.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/communication-application.js"></script>
+</head>
+
+<body>
+
+    <body class="body" id="body">
+        <script>checkLogin()</script>
+        <!-- nav bar with 1 row and 4 columns each column is a button for navigation -->
+        <script>addNav("documents-list")</script>
+        </br></br>
+        <!-- table for user's current uploads -->
+        <b>My Uploads</b>
+        <table class="docs-table" id="docs-table">
+            <thead>
+                <tr>
+                    <th>Label</th>
+                    <th>File Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <script>getDocuments()</script>
+            </tbody>
+        </table>
+        <div class="modal" id="edit">
+            <!-- heading part of modal box with cancel button -->
+            <div class="heading-box">
+                <b> Edit</b>
+                <button class="transparent-button-cancel" onclick="hideModal('edit')">
+                    <img class="cancel-image" src="../cancel.PNG" alt="">
+                </button>
+            </div>
+            <div class="container-div">
+                <table cellspacing="30px">
+                    <tbody>
+                        <tr>
+                            <div class="container">
+                                <td>
+                                    <b> File Description</b>
+                                </td>
+                                <td><input class="input-field-modal" type="text" id="labelEdit" name="labelEdit"
+                                        value=""></br></td>
+                            </div>
+                        </tr>
+                        </br>
+                        </br>
+                        <tr>
+                            <div class="container">
+                                <td></td>
+                                <td>
+                                    <button id="save" class="button-margin-sides"
+                                        onclick="hideModal('edit')">Save</button>
+                                    <button class="button-margin-sides" onclick="hideModal('edit')"
+                                        class="pad-sides">Cancel</button>
+                                </td>
+                            </div>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="modal" id="delete">
+            <!-- heading part of modal box with cancel button -->
+            <div class="heading-box">
+                Confirm File Deletion
+                <button class="transparent-button-cancel" onclick="hideModal('delete')">
+                    <img class="cancel-image" src="../cancel.PNG" alt="">
+                </button>
+            </div>
+            <!-- options part of modal box with ok and cancel button  -->
+            <div class="container-div">
+                <div class="container">
+                    </br>
+                    </br>
+                    <div class="description-div">
+                        <img class="question-image" src="../questionCapture.PNG" alt="">
+                        Are you Sure?
+                    </div>
+                </div></br><br>
+                <div class="container">
+                    <button class="button-white-small" id="ok-button-docs">ok</button>
+                    <button class="button-white-small" onclick="hideModal('delete')">Cancel</button>
+                </div></br>
+            </div>
+        </div>
+        <div class="modal" id="upload">
+            <!-- heading part of modal box with cancel button -->
+            <div class="heading-box">
+                <b> Upload</b>
+                <button class="transparent-button-cancel" onclick="hideModal('upload')">
+                    <img class="cancel-image" src="../cancel.PNG" alt="">
+                </button>
+            </div>
+            <div class="container-div">
+                <table cellspacing="30px">
+                    <!-- file description can be given as text and file can be selected to upload as new document -->
+                    <tr>
+                        <div class="container">
+                            <td>
+                                <b> File Description</b>
+                            </td>
+                            <td>
+                                <input type="text" name="label" id="label">
+                            </td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="container">
+                            <td>
+                                <b>File Upload</b>
+                            </td>
+                            <td> <input type="file" name="file" id="file"></td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="container">
+                            <td><button class="button" onclick="if(uploadDocument()){hideModal('upload')}">Upload</span>
+                            </td>
+                            <td><button class="button" onclick="hideModal('upload')">Cancel</span></td>
+                        </div>
+                    </tr>
+                </table>
+    </body>
+
+</html>

@@ -1,0 +1,54 @@
+.user-table {
+    width: 100%;
+    border-collapse: separate;
+    border: solid black 1px;
+    border-radius: 4px;
+    margin: auto;
+    text-align: center;
+    border: solid black 1px;
+}
+
+.user-table tr td a {
+    text-decoration: none;
+    color: black;
+}
+
+.user-table tr td:first-child {
+    text-align: left;
+}
+
+.user-table th:first-child {
+    border-top-left-radius: 4px;
+    text-align: left;
+}
+
+.user-table th:last-child {
+    border-top-right-radius: 4px;
+}
+
+.user-table tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 4px;
+}
+
+.user-table tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 4px;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #F0F0F0;
+
+}
+
+.user-table tr:nth-child(odd) {
+    background-color: #FFFFFF;
+
+}
+
+.user-table tr th {
+    background-color: #CCCCCC;
+    border: solid black 1px;
+}
+
+.user-table tr td {
+    border: solid black 1px;
+}

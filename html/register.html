@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/communication-application.js"></script>
+</head>
+
+<body class="body" id="body">
+    <!-- registration form with 4 feilds 2 for name and email resp. and 2 for password and confirm password -->
+    <!-- submit button is named as Register -->
+    <table class="form-table" cellpadding="10" cellspacing="0">
+        <tr>
+            <td>
+            <td>
+                <h1 class="heading">Register</h1>
+            </td>
+            </td>
+        </tr>
+        <form class="loginform" action="./register-success.html" method="get" onsubmit="return registerUser();">
+            <tr>
+                <td class="text-col"><b>Full Name</b></td>
+                <td>
+                    <input type="text" name="name" value="Anne Hunter" id="name" class="text-box">
+                </td>
+                </br>
+            </tr>
+            <tr>
+                <td class="text-col"><b>Email</b></td>
+                <td>
+                    <input type="text" name="email" value="anne.hunter@mail.com" id="email" class="text-box">
+                </td>
+            </tr>
+            <tr>
+                <td class="text-col"><b>Password</b></td>
+                <td>
+                    <input type="password" name="password" value="*****" id="pass" class="text-box">
+                </td>
+            </tr>
+            <tr>
+                <td class="text-col"> <b>Confirm Password</b></td>
+                <td>
+                    <input type="password" name="confirmPassword" value="*****" id="confirmPass" class="text-box">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="submit-col">
+                    <input class="submit-button" type="submit" value="Register" name="Register">
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+
+</html>
