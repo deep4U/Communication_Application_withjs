@@ -178,7 +178,8 @@ function checkPassword(email, password, storageMap) {
         if (user.email == email) {
             if (user.password == password) {
                 // if credentials match then store in loggedin
-                localStorage.setItem('loggedin', JSON.stringify(user));
+                let {password,confirmPassword, ...logged_user} = user;
+                localStorage.setItem('loggedin', JSON.stringify(logged_user));
                 return true;
             }
             else {
@@ -194,7 +195,7 @@ function deleteUser(deleteId) {
     // load users uploads and chat storage
     let users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
     let uploads = localStorage.getItem('uploads') ? JSON.parse(localStorage.getItem('uploads')) : [];
-    let chatObjList = localStorage.getItem('chat') ? JSON.parse(localStorage.getItem('chat')) : [];
+    let chatObjList = localStorage.getItem('chats') ? JSON.parse(localStorage.getItem('chats')) : [];
     // find indices to delete in docs and chat storage for that user
     let deleteIndexDocs = [];
     for (const [index, upload] of uploads.entries()) {
@@ -215,7 +216,7 @@ function deleteUser(deleteId) {
     while (deleteIndexChat.length) {
         chatObjList.splice(deleteIndexChat.pop(), 1);
     }
-    localStorage.setItem('chat', JSON.stringify(chatObjList));
+    localStorage.setItem('chats', JSON.stringify(chatObjList));
     localStorage.setItem('uploads', JSON.stringify(uploads));
     // find user's index in localStorage of users and delete user from there
     for (const [index, user] of users.entries()) {
@@ -264,7 +265,8 @@ function editUser() {
                 localStorage.setItem('users', JSON.stringify(users));
                 // if loggedin user was changed then loggedin localstorage needs to be modefied too
                 if (user.id == loggedin.id) {
-                    localStorage.setItem('loggedin', JSON.stringify(user));
+                    let {password,confirmPassword, ...logged_user} = user;
+                    localStorage.setItem('loggedin', JSON.stringify(logged_user));
                 }
                 return true;
             }
@@ -528,7 +530,7 @@ function getEditTable() {
 
 function getChatData() {
     // load chat data from local storage and display in chat-div
-    let chatObjList = localStorage.getItem('chat') ? JSON.parse(localStorage.getItem('chat')) : [];
+    let chatObjList = localStorage.getItem('chats') ? JSON.parse(localStorage.getItem('chats')) : [];
     let chatDiv = document.getElementById('chat-div');
     for (let chatObj of chatObjList) {
         chat = chatObj.text;
@@ -545,7 +547,7 @@ function dateFormatter(dateObj) {
 
 function setGroupChat() {
     // add message to group chat
-    let chatObjList = localStorage.getItem('chat') ? JSON.parse(localStorage.getItem('chat')) : [];
+    let chatObjList = localStorage.getItem('chats') ? JSON.parse(localStorage.getItem('chats')) : [];
     let message = document.getElementById('message').value;
     if (message == '' || !message) {
         alert("message is a mandatory feild!");
@@ -561,7 +563,7 @@ function setGroupChat() {
         text: `${date} ${name} : ${message}`
     };
     chatObjList.push(chatObj);
-    localStorage.setItem('chat', JSON.stringify(chatObjList));
+    localStorage.setItem('chats', JSON.stringify(chatObjList));
     location.reload();
 }
 
